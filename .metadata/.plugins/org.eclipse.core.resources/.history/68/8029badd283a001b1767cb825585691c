@@ -1,0 +1,39 @@
+package com.machine.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/api")
+public class WashingMachinController {
+
+	
+	@RequestMapping(value = "/state", method = RequestMethod.GET)
+    public String getState() {
+		return "state";
+    }
+
+    @RequestMapping(value = "/start", method = RequestMethod.GET)
+    public String start() throws InterruptedException {
+    	return "washing machine has been started";
+       }
+
+    @RequestMapping(value = "/stop", method = RequestMethod.GET)
+    public String stop() {
+    	return "washing machine has been stoped";
+    }
+
+    @RequestMapping(value = "/program/(index)", method = RequestMethod.GET)
+    public String selectPrograme(@RequestParam Integer index) {
+    	return "program";
+    }
+
+    @RequestMapping(value = "/programs", method = RequestMethod.GET)
+    public String getAllProgrammes() {
+       return "listof program";
+    }
+
+	
+}

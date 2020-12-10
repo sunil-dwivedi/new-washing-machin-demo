@@ -1,0 +1,35 @@
+package com.machine.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.machine.dao.ProcessDao;
+import com.machine.dao.StatusDao;
+import com.machine.service.MachineService;
+
+@Service
+public class MachineServiceImpl implements MachineService {
+	@Autowired
+	ProcessDao processDao;
+	@Autowired
+	StatusDao statusDao;
+
+	@Override
+	public boolean getStatus() {
+		return statusDao.getStaus();
+	}
+
+	@Override
+	public boolean setStatus(boolean status) {
+		return statusDao.setStatus(status);
+
+	}
+
+	@Override
+	public List<String> getProcessList() {
+		return processDao.getAllProcess();
+	}
+
+}

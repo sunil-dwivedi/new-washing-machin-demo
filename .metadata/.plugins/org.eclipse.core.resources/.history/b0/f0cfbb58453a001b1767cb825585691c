@@ -1,0 +1,7 @@
+package com.machine.serviceImpl;
+
+import com.machine.service.ProcessService;
+
+public class ProcessServiceImpl implements ProcessService {
+
+}

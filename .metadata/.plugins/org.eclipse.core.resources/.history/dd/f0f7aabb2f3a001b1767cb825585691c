@@ -1,0 +1,20 @@
+package com.machine.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.machine.model.States;
+
+public interface StatusDao extends JpaRepository<States, Long> {
+
+	@Query("SELECT u FROM User u WHERE u.status = ?1")
+	boolean start(Integer status);
+
+	@Query("SELECT u FROM User u WHERE u.status = ?1 and u.name = ?2")
+	boolean stop(Integer status, String name);
+	
+	@Query("SELECT u FROM User u WHERE u.status = ?1 and u.name = ?2")
+	boolean getStaus();
+
+
+}

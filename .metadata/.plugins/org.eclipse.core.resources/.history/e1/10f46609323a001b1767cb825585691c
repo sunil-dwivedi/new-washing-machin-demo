@@ -1,0 +1,19 @@
+package com.machine.serviceImpl;
+
+import org.springframework.stereotype.Service;
+
+import com.machine.service.MachineService;
+
+@Service
+public class MachineServiceImpl implements MachineService {
+
+	@Override
+	public boolean getStatus() {
+		return false;
+	}
+	
+	@Override
+	public boolean setStatus(boolean status) {
+	}
+
+}

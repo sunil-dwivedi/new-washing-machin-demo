@@ -1,0 +1,6 @@
+package com.machine.service;
+
+public interface MachineService {
+	public boolean getStatus();
+
+}

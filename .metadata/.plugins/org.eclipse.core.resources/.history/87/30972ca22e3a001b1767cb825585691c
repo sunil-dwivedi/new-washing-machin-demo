@@ -1,0 +1,5 @@
+package com.machine.dao;
+
+public interface StatusDao  JpaRepository<Drying, Long> { {
+
+}

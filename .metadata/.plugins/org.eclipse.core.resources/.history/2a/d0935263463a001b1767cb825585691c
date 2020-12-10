@@ -1,0 +1,65 @@
+package com.machine.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.machine.service.MachineService;
+
+@RestController
+@RequestMapping(value = "/api")
+public class WashingMachinController {
+
+	@Autowired
+	MachineService machineService;
+	
+	@Autowired
+	ProcessService ProcessService;
+
+	@RequestMapping(value = "/state", method = RequestMethod.GET)
+	public String getState() {
+		if (machineService.getStatus()) {
+			return "machin is running";
+		}
+		return "machin is stop please start";
+	}
+
+	@RequestMapping(value = "/start", method = RequestMethod.GET)
+	public String start() throws InterruptedException {
+		if (machineService.getStatus()) {
+			return "machin is already started";
+		} else if (machineService.setStatus(true)) {
+			return "washing machine has been started";
+		}
+		return "washing machine has some problem not started";
+	}
+
+	@RequestMapping(value = "/stop", method = RequestMethod.GET)
+	public String stop() {
+		if (!machineService.getStatus()) {
+			return "machin is already stoped";
+		} else if (machineService.setStatus(false)) {
+			return "washing machine has been stopeed";
+		}
+		return "washing machine has some problem not stopped";
+	}
+
+	@RequestMapping(value = "/program", method = RequestMethod.GET)
+	public String selectPrograme(@RequestParam Integer index) {
+		if (!machineService.getStatus()) {
+			return "machin is stoped please start first";
+		}
+		return "program";
+	}
+
+	@RequestMapping(value = "/programs", method = RequestMethod.GET)
+	public String getAllProgrammes() {
+		if (!machineService.getStatus()) {
+			return "machin is stoped please start first";
+		}
+		return "listof program";
+	}
+
+}

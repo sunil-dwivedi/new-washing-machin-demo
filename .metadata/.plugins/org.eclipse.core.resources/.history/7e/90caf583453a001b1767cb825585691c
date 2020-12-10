@@ -1,0 +1,24 @@
+package com.machine.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.machine.service.ProcessService;
+
+@Service
+public class ProcessServiceImpl implements ProcessService {
+
+	@Override
+	public List<String> getProcessList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getProcess() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

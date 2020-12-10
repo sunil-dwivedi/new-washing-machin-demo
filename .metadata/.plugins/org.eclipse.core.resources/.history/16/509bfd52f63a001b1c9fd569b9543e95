@@ -1,0 +1,30 @@
+package com.machine.test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.machine.dao.ProcessDao;
+import com.machine.dao.StatusDao;
+
+@DataJpaTest
+public class ServiceTest {
+	@Autowired
+	private ProcessDao processDao;
+	@Autowired
+	private StatusDao statusDao;
+	
+	@Test
+	public void testCreateProduct() {
+	    Product savedProduct = repo.save(new Product("iPhone 10", 789));
+	    assertThat(savedProduct.getId()).isGreaterThan(0);
+	}
+	@Test
+	public void testFindProductByName() {
+	    Product product = repo.findByName("iPhone 10");    
+	    assertThat(product.getName()).isEqualTo("iPhone 10");
+	}
+
+}

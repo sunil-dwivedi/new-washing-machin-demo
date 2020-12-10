@@ -1,0 +1,6 @@
+package com.machine.serviceImpl;
+
+@service
+public class MachineServiceImpl {
+
+}

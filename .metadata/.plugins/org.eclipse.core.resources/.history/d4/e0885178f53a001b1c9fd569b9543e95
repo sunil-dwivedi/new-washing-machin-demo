@@ -1,0 +1,12 @@
+package com.machine.test;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import com.machine.dao.ProcessDao;
+
+@DataJpaTest
+public class ServiceTest {
+	@Autowired
+	private ProcessDao processDao;
+}

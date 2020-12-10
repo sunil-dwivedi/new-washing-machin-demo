@@ -1,0 +1,16 @@
+package com.machine.serviceImpl;
+
+import java.util.Arrays;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class InitializerService {
+	@PostConstruct
+    public void init(){
+	 List<Process> processList=Arrays.asList(a);
+ }
+
+}
