@@ -20,9 +20,14 @@ public class ProcessServiceImpl implements ProcessService {
 	}
 
 	@Override
+	public void setProcess(int processId) {
+		 processDao.getProcess(processId);
+
+	}
+
+	@Override
 	public String getProcess(int processId) {
 		return processDao.getProcess(processId);
-
 	}
 
 }

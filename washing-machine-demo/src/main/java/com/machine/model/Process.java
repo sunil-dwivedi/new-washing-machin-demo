@@ -9,11 +9,22 @@ import javax.persistence.Id;
 @Entity
 public class Process {
 
-	public Process(int processId, String processName, String Serial, String modelNumber) {
+	public Process(int processId, String processName, String Serial, String modelNumber, String processStatus) {
 		this.processId = processId;
 		this.processName = processName;
 		this.Serial = Serial;
 		this.modelNumber = modelNumber;
+		this.processStatus = processStatus;
+	}
+	@Column(name = "processStatus")
+	String processStatus;
+
+	public String getProcessStatus() {
+		return processStatus;
+	}
+
+	public void setProcessStatus(String processStatus) {
+		this.processStatus = processStatus;
 	}
 
 	public String getModelNumber() {

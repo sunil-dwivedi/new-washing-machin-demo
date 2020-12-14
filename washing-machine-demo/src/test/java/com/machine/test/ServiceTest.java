@@ -23,9 +23,9 @@ public class ServiceTest {
 
 	@Test
 	public void testsaveProcessess() {
-		List<Process> processList = Arrays.asList(new Process(101, "Washing", "SN-1234567890-123", "ABC22133"),
-		new Process(102, "Squeaking", "SN-1234567890-123", "ABC22133"),
-		new Process(103, "Drying", "SN-1234567890-123", "ABC22133"));
+		List<Process> processList = Arrays.asList(new Process(101, "Washing", "SN-1234567890-123", "ABC22133","inactive"),
+		new Process(102, "Squeaking", "SN-1234567890-123", "ABC22133","inactive"),
+		new Process(103, "Drying", "SN-1234567890-123", "ABC22133","inactive"));
 		List<Process> processList1 = processDao.saveAll(processList);
 		assertThat(processList1).size().isGreaterThan(0);
 

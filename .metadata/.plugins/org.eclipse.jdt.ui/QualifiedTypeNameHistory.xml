@@ -11,7 +11,17 @@
 <fullyQualifiedTypeName name="com.machine.service.MachineService"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="com.machine.service.ProcessService"/>
+<fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+<fullyQualifiedTypeName name="org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Replace"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.test.annotation.Rollback"/>
+<fullyQualifiedTypeName name="io.swagger.annotations.Api"/>
 </qualifiedTypeNameHistroy>

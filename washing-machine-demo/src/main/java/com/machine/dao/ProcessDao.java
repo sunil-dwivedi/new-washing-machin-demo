@@ -8,9 +8,12 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ProcessDao extends JpaRepository<Process, Long> {
 
-	@Query("SELECT p.processName FROM Process p")
+	@Query("SELECT p.processName,p.processId FROM Process p")
 	List<String> getAllProcess();
 
 	@Query("SELECT p.processName FROM Process p where p.processId=?1")
 	String getProcess(int processId);
+	
+	@Query("update Process p set p.processStatus='active' where p.processId=?1")
+	String setProcess(int processId);
 }
